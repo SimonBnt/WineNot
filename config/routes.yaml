@@ -3,3 +3,13 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+admin:
+    path: /admin
+    controller: App\Controller\Admin\DashboardController::index
+    # methods: [POST, GET]
+
+# api_wines:
+#     path: /wines
+#     controller: App\Controller\WineController::getWines
+#     methods: ["GET"]

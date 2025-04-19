@@ -1,0 +1,747 @@
+@font-face {
+    font-family: "Bahnschrift";
+    src: URL("/public/assets/font/BAHNSCHRIFT.TTF") format("truetype");
+}
+
+@import url('https://fonts.cdnfonts.com/css/pristina');
+@import url('https://fonts.cdnfonts.com/css/franchise');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+html {
+    overflow: hidden;
+    height: 100dvh;
+    
+    body {
+        overflow-x: hidden;
+
+        // -- adminConnectionForm -- //
+
+        #adminConnectionMainContainer {
+            font-size: 0.8rem;
+
+            @media only screen and (min-width: 768px) {
+                font-size: 1rem;
+            }
+
+            @media only screen and (min-width: 1024px) {
+                font-size: 1.25rem;
+            }
+
+            #userConnectedMessageContainer {
+                display: flex;
+                justify-content: flex-end;
+                gap: 0 0.5rem;
+                margin: 1rem 0.5rem 0 0;
+
+                #userNameContainer {
+                    color: mediumseagreen;
+                }
+            }
+
+            #logoutContainer {
+                margin: 2rem 0.5rem 0 0;
+                text-align: right;
+
+                #logoutBtn {
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    background-color: #222;
+                    color: #eee;
+                    padding: 0.5rem;
+                    border-radius: 0.5rem;
+                    text-transform: uppercase;
+                    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
+                }
+            }
+
+            #adminConnectionError {
+                color: #eee;
+                text-align: center;
+                background-color: indianred;
+                border: solid #222 2px;
+                border-radius: 0.5rem;
+                padding: 0.5rem;
+                margin: 2rem auto;
+                width: fit-content;
+            }
+
+            #adminConnectionForm {
+                background-color: #f8f8f8;
+                border: #222 solid 4px;
+                border-radius: 0.5rem;
+                box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                align-items: center;
+                justify-content: center;
+                padding: 1rem;
+                width: fit-content;
+                margin: 30% auto;
+                
+                @media only screen and (min-width: 768px) {
+                    margin: 20% auto;
+                    padding: 2rem;
+                }
+                
+                @media only screen and (min-width: 1024px) {
+                    margin: 10% auto;
+                }
+                
+                h2 {
+                    font-size: 0.8rem;
+                    text-transform: uppercase;
+                    text-align: center;
+
+                    @media only screen and (min-width: 768px) {
+                        font-size: 1rem;
+                    }
+        
+                    @media only screen and (min-width: 1024px) {
+                        font-size: 1.25rem;
+                    }
+                }
+    
+                #formElementContainer {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem 0;
+                    
+                    @media only screen and (min-width: 768px) {
+                        gap: 2rem 0;
+                    }
+
+                    .formElement {
+                        font-weight: bold;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 0 0.5rem;
+
+                        input {
+                            border-radius: 0.25rem;
+                            padding: 0.5rem;
+                        }
+                    }
+
+                    .formElement::after {
+                        content: "*";
+                        color: indianred;
+                    }
+                }
+    
+                #adminConnectionSubmitBtn {
+                    background-color: #222;
+                    color: #eee;
+                    padding: 0.5rem;
+                    border-radius: 0.5rem;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
+
+                    @media only screen and (min-width: 768px) {
+                        font-size: 1rem;
+                    }
+        
+                    @media only screen and (min-width: 1024px) {
+                        font-size: 1.25rem;
+                    }
+                }
+            }
+        }
+
+
+        // -- Legale notice -- //
+
+        #legalNoticeContainer {
+            position: absolute;
+            top: 160%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: none;
+
+            p {
+                font-size: 0.8rem;
+            }
+
+            #legalNoticeContent {
+                display: flex;
+                flex-direction: column;
+                color: #eee;
+                padding: 1rem;
+                width: 58rem;
+                background-color: #333;
+                border-radius: 0.5rem;
+                box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
+                position: relative;
+
+                h2 {
+                    font-family: "Franchise";
+                    text-transform: uppercase;
+                    font-size: 1.5rem;
+                    margin-bottom: 1rem;
+                    text-align: center;
+                    color: #a56122;
+                }
+
+                #infoMainContainer {
+                    display: flex;
+                    gap: 0 2rem;
+
+                    h3 {
+                        font-family: "Franchise";
+                        text-transform: uppercase;
+                        margin-bottom: 0.25rem;
+                        color: #a56122;
+                    }
+                }
+
+                #legalNoticeMainContainer {
+                    margin-top: 0.5rem;
+
+                    h3 {
+                        font-family: "Franchise";
+                        text-transform: uppercase;
+                        margin: 0.25rem 0;
+                        color: #a56122;
+                    }
+                }
+
+                #closeLN {
+                    position: absolute;
+                    top: 1rem;
+                    right: 1rem;
+                    text-transform: uppercase;
+                    padding: 0.5rem;
+                    border: solid #222 2px;
+                    border-radius: 1rem;
+                    height: 10px;
+                    width: 10px;
+                    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
+                    background-color: #eee;
+                    display: flex;
+                    align-items: center;
+                    color: #222;
+                    cursor: pointer;
+                    justify-content: center;
+                }
+            }
+        }
+
+        // -- User Side Header -- //
+        
+        #userSideHeader {
+            box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.8);
+            background-color: #333;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 0.5rem;
+            z-index: 10000;
+            
+            #logo {
+                position: absolute;
+                top: 1rem;
+                left: 1rem;
+                width: 7rem;
+            }
+
+            #userSideHeaderTitle {
+                text-align: center;
+                color: #eee;
+                margin-left: auto;
+                font-size: 1.5rem;
+            }
+
+            #burgerMenuImgContainer {
+                margin-left: auto;
+                cursor: pointer;
+
+                .mbImg {
+                    width: 2rem;
+                }
+
+                #burgerMenuCloser {
+                    display: none;
+                }
+            }
+
+            #burgerMenu {
+                background-color: #222;
+                display: none;
+                position: absolute;
+                text-align: right;
+                top: 100%;
+                right: 0;
+                color: #eee;
+                width: 18rem;
+                height: 100dvh;
+
+                ul {
+                    list-style: none;
+                    color: #eee;
+
+                    li {
+                        text-transform: uppercase;
+                        padding: 1rem;
+                        border-bottom: solid rgba(0, 0, 0, 0.2) 1px;
+                        cursor: pointer;
+                    }
+                }
+
+                #mbFooter {
+                    position: fixed;
+                    bottom: 0;
+                    right: 1rem;
+                    margin: 0 0 2rem 0;
+                    display: grid;
+                    gap: 0.5rem 0;
+                    font-size: 0.8rem;
+
+                    a {
+                        color: rgb(141, 43, 43);
+                        text-decoration: none;
+                    }
+                }
+            }
+
+        }
+
+        // -- Admin Side Header -- //
+
+        #adminHeader {
+            color: #eee;
+            text-align: center;
+            padding: 1rem;
+            width: 100%;
+            border-bottom: solid #ff7b00 2px;
+            background-color: #333;
+
+            h2 {
+                text-transform: uppercase;
+            }
+        }
+
+        // -- Admin Connection Page Header -- //
+
+        #adminConnectionHeader {
+            color: #eee;
+            text-align: center;
+            padding: 1rem;
+            width: 100%;
+            background-color: #333;
+            box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
+
+            h2 {
+                text-transform: uppercase;
+            }
+        }
+
+        // -- User Side Main -- //
+        
+        #userSideMain {
+            position: relative;
+            overflow: hidden;
+
+            // -- Modal -- //
+
+            #lobbyModal {
+                position: absolute;
+                z-index: 1000;
+                width: 100%;
+                height: 100%;
+                color: #eee;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background-color: rgba(0, 0, 0, 0.8);
+
+                #lobbyModalContent {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2rem 0;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    position: relative;
+                    width: 50rem;
+
+                    h2 {
+                        text-transform: uppercase;
+                        margin-bottom: 2rem;
+                        text-decoration: underline 2px;
+                    }
+
+                    #lobbyModalLogo {
+                        width: 10rem;
+                    }
+
+                    p {
+                        font-size: 1.5rem;
+                    }
+                }
+
+                #lobbyModalBtn {
+                    background-color: #cacaca;
+                    border: solid #222 2px;
+                    border-radius: 0.5rem;
+                    padding: 0.5rem;
+                    width: fit-content;
+                    color: #333;
+                    margin: 0 auto;
+                    margin-top: 2rem;
+                    font-size: 1.5rem;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
+                }
+            }
+
+            // -- Sliders Openers -- //
+                
+            .slidersOpeners {
+                position: absolute;
+                cursor: pointer;
+            }
+
+            #lobbySliderOpener1 {
+                top: 21%;
+                left: 23%;
+                height: 21rem;
+                width: 8rem;
+            }
+
+            #lobbySliderOpener2 {
+                top: 18%;
+                left: 3%;
+                height: 25rem;
+                width: 12rem;
+            }
+
+            #lobbySliderOpener3 {
+                top: 19%;
+                right: 20%;
+                height: 23rem;
+                width: 10rem;
+            }
+
+            #backshopSliderOpener1 {
+                top: 26%;
+                right: 43%;
+                height: 22rem;
+                width: 9rem;
+            }
+
+            #backshopSliderOpener2 {
+                top: 25%;
+                right: 28%;
+                height: 23rem;
+                width: 10rem;
+            }
+
+            #backshopSliderOpener3 {
+                top: 25%;
+                right: 10%;
+                height: 24rem;
+                width: 11rem;
+            }
+
+            #caveSliderOpener1 {
+                top: 18%;
+                right: 13%;
+                height: 29rem;
+                width: 37rem;
+            }
+
+            #caveSliderOpener1 {
+                top: 18%;
+                right: 13%;
+                height: 24rem;
+                width: 28rem;
+            }
+
+            #caveSliderOpener2 {
+                bottom: 10%;
+                left: 19%;
+                height: 10rem;
+                width: 12rem;
+            }
+
+            // -- Backgrounds Styles And Navigation -- //
+
+            .background {
+                width: 100%;
+            }
+
+            #backShopOpener {
+                position: absolute;
+                top: 47%;
+                transform: translateY(-50%);
+                right: 4%;
+                cursor: pointer;
+                height: 20rem;
+                width: 10rem;
+            }
+            
+            #caveOpener {
+                position: absolute;
+                top: 47%;
+                left: 33%;
+                transform: translateY(-50%);
+                cursor: pointer;
+                height: 16rem;
+                width: 7rem;
+            }
+
+            #lobbyReturner {
+                position: absolute;
+                top: 54%;
+                transform: translateY(-50%);
+                left: 0;
+                cursor: pointer;
+                height: 30rem;
+                width: 6rem;
+            }
+
+            #backShopReturner {
+                position: absolute;
+                top: 9%;
+                left: 26%;
+                cursor: pointer;
+                width: 12rem;
+                height: 10rem;
+            }
+        }
+
+        // -- Slider -- //
+
+        #sliderModalContainer {
+            .loading {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%);
+                padding: 0.5rem;
+                border-radius: 0.5rem;
+                background-color: #eee;
+                color: #222;
+                box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
+                border: solid #eee 2px;
+                font-size: 2rem;
+            }
+
+            .error {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%);
+                padding: 0.5rem;
+                border-radius: 0.5rem;
+                background-color: #eee;
+                color: #222;
+                box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
+                border: solid #eee 2px;
+                font-size: 2rem;
+            }
+        }
+
+        #sliderBackground {
+            z-index: 1000;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            height: 100%;
+            
+            #sliderModalContent {
+                height: 100%;
+                position: relative;
+
+                #sliderCloser {
+                    position: absolute;
+                    top: 9%;
+                    right: 1%;
+                    height: 2px;
+                    width: 2px;
+                    border-radius: 100%;
+                    padding: 1rem;
+                    font-size: 1rem;
+                    background-color: #333;
+                    color: #eee;
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: solid #eee 2px;
+                    text-transform: uppercase;
+                    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
+                }
+
+                #shelfContainer {
+                    padding: 0.5rem;
+                    background-color: #333;
+                    border-radius: 0.5rem;
+                    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
+                    position: absolute;
+                    left: 2%;
+                    top: 16%;
+    
+                    #shelf {
+                        border: solid #eee 2px;
+                        border-radius: 0.5rem;
+                        padding: 0.5rem;
+                        text-align: center;
+                        
+                        #shelfImg {
+                            height: 22rem;
+                            width: 11rem;
+                            border-radius: 0.5rem;
+                        }
+
+                        #shelfCountryName {
+                            text-transform: uppercase;
+                            font-size: 1.35rem;
+                            color: #eee;
+                            width: 11rem;
+                            text-align: center;
+                        }
+                    }
+                }
+
+                #slidersMainContainer {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem 0;
+                    overflow: scroll;
+                    border-radius: 0.5rem;
+                    position: absolute;
+                    top: 16%;
+                    left: 24%;
+                    height: 30rem;
+                    width: 46rem;
+                    
+                    .sliderContainer {
+                        border-radius: 0.5rem;
+                        padding: 0.5rem;
+                        background-color: #333;
+                        box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
+                        
+                        .slider {
+                            color: #eee;
+                            border: solid #eee 2px;
+                            border-radius: 0.5rem;
+                            text-transform: uppercase;
+                            position: relative;
+                            justify-content: center;
+
+                            .sliderNavigationImg {
+                                width: 2rem;
+                                height: 2rem;
+                                position: absolute;
+                                top: 50%;
+                            }
+
+                            #leftSliderNavigation {
+                                left: 1rem;
+                            }
+
+                            #rightSliderNavigation {
+                                right: 1rem;
+                            }
+        
+                            .sliderContentContainer {
+                                display: flex;
+                                gap: 0 2rem;
+                                margin: 1rem 0;
+                                
+                                .sliderLeftContainer {
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 1.25rem 0;
+                                    width: 28rem;
+                
+                                    .regionContainer {
+                                        text-transform: uppercase;
+                                        font-size: 2rem;
+                                        font-family: "Franchise", Arial, sans-serif;
+                                    }
+                
+                                    .typeAndPriceContainer {
+                                        display: flex;
+                                        align-items: center;
+                                        gap: 0 0.5rem;
+                                        font-size: 1rem;
+                
+                                        .typeContainer {
+                                            background-color: #eee;
+                                            padding: 0 8rem 0 1rem;
+                                            border-radius: 0.25rem;
+                                            color: #333;
+                                            padding: 0.25rem;
+                                        }
+                                        
+                                        .priceContainer {
+                                            color: #333;
+                                            background-color: #eee;
+                                            padding: 0.25rem;
+                                            font-family: "Bahnschrift", Arial, sans-serif;
+                                            display: flex;
+                                            gap: 0.5rem;
+                                            border-radius: 0.25rem;
+                                        }
+                                    }
+                
+                                    .dateAndNameContainer {
+                                        display: flex;
+                                        gap: 0 1rem;
+                                        font-size: 1rem;
+                
+                                        .dateContainer::after {
+                                            content: " -";
+                                        }
+                                    }
+                
+                                    .descriptionContainer {
+                                        text-transform: none;
+                                        width: 20rem;
+                                        font-family: 'Pristina', Arial, sans-serif;
+                                        font-size: 1.25rem;
+                                    }
+                                }
+                
+                                .sliderRightContainer {
+                                    border: solid #eee 2px;
+                                    border-radius: 0.5rem;
+                                    background-color: #fff4ed;
+                                    text-align: center;
+                                    height: fit-content;
+                                    
+                                    .wineBottlePadding {
+                                        padding: 0.5rem;
+                                        
+                                        .sliderWineImg {
+                                            display: block;
+                                            object-fit: cover;
+                                            height: 15rem;
+                                            border-radius: 0.5rem;
+                                            width: 5.5rem;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

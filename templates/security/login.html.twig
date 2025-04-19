@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+    {% block header %}
+        {% include "_partials/adminConnectionHeader.html.twig" %}
+    {% endblock %}
+
+    <div id="adminConnectionMainContainer">
+        {% if app.user %}
+            <div id="userConnectedMessageContainer">
+                <div>Vous êtes connecté en tant que :</div>
+                <div id="userNameContainer">{{ app.user.userIdentifier }}</div>
+            </div>
+        {% endif %}
+
+        {% if app.user %}
+            <div id="logoutContainer">
+                <a id="logoutBtn" href="{{ path("app_logout") }}">Se déconnecter</a>
+            </div>
+        {% endif %}
+
+        {% if error %}
+            <div id="adminConnectionError">
+                {{ error.messageKey|trans(error.messageData, "security") }}
+            </div>
+        {% endif %}
+
+        <form id="adminConnectionForm" method="post">
+            <h2>Entrez vos informations pour vous connecter</h2>
+            <div id="formElementContainer">
+                <div class="formElement">
+                    <label for="username">Identifiant : </label>
+                    <input type="email" value="{{ last_username }}" name="_username" id="username" required>
+                </div>
+                <div class="formElement">
+                    <label for="password">Mot de passe : </label>
+                    <input type="password" name="_password" id="password" autocomplete="current-password" required>
+                </div>
+            </div>
+
+            <input type="hidden" name="_csrf_token"
+                value="{{ csrf_token("authenticate") }}"
+            >
+
+            {#
+                Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                See https://symfony.com/doc/current/security/remember_me.html
+
+                <div class="checkbox mb-3">
+                    <label>
+                        <input type="checkbox" name="_remember_me"> Remember me
+                    </label>
+                </div>
+            #}
+
+            <button id="adminConnectionSubmitBtn" type="submit">
+                Connexion
+            </button>
+        </form>
+    </div>
+{% endblock %}
